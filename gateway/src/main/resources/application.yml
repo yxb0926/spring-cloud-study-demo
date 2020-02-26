@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-cloud-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: 163_route
+          uri: http://www.163.com/
+          predicates:
+            - Path=/163
+        - id: baidu_route
+          uri: http://www.baidu.com/
+          predicates:
+            - Path=/baidu
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
