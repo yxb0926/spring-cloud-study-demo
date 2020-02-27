@@ -3,7 +3,6 @@ server:
 spring:
   application:
     name: spring-cloud-gateway
-
   cloud:
     gateway:
       routes:
@@ -15,6 +14,14 @@ spring:
           uri: http://www.baidu.com/
           predicates:
             - Path=/baidu
+        - id: ecs_route
+          uri: http://xxx.xxx.com/
+          predicates:
+            - Path=/ecs/**
+        - id: rds_route
+          uri: http://xxx.xxx.com/
+          predicates:
+            - Path=/rds/**
 
 logging:
   level:
@@ -22,3 +29,7 @@ logging:
     org.springframework.http.server.reactive: DEBUG
     org.springframework.web.reactive: DEBUG
     reactor.ipc.netty: DEBUG
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka/
