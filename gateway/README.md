@@ -5,4 +5,9 @@
 
 - 2、spring 官方提供的原理图
 ## TODO List
-- 1、 简单的demo 【&radic;】
+- 1、 简单的demo [√]
+- 2、 自定义路由 [x]
+  - 2.1 globalFilter [√] 
+  - 2.2 gatewayFilter [x]
+- 3、 token效验 [x]
+- 3、 结合oauth2.0实现微服务api权限管理 [x]

@@ -3,17 +3,22 @@ server:
 spring:
   application:
     name: spring-cloud-gateway
+
   cloud:
     gateway:
       routes:
         - id: 163_route
-          uri: http://www.163.com/
+          uri: https://www.163.com/
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar1
           predicates:
             - Path=/163
         - id: baidu_route
-          uri: http://www.baidu.com/
+          uri: https://www.baidu.com/
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar
           predicates:
-            - Path=/baidu
+            - Path=/cache/**
         - id: ecs_route
           uri: http://xxx.xxx.com/
           predicates:
@@ -25,10 +30,12 @@ spring:
 
 logging:
   level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
+    org.springframework.cloud.gateway: INFO
+    org.springframework.http.server.reactive: INFO
+    org.springframework.web.reactive: INFO
+    reactor.ipc.netty: INFO
+
+## 服务发现注册配置
 eureka:
   client:
     service-url:
