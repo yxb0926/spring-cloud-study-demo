@@ -9,5 +9,6 @@
 - 2、 自定义路由 [x]
   - 2.1 globalFilter [√] 
   - 2.2 gatewayFilter [x]
-- 3、 token效验 [x]
 - 3、 结合oauth2.0实现微服务api权限管理 [x]
+- 4、 熔断Hystrix  [x]
+- 5、 限流 [x]

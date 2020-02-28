@@ -5,8 +5,9 @@
 
 ## 2、 Todo List
 
-- 2.1 simple demo noly for can run the application  [&radic;]
-- 2.2 增加认证   [&times;]
-- 2.3 集群模式 [&times;]
+- 2.1 simple demo noly for can run the application  [√]
+- 2.2 增加认证   [x]
+- 2.3 eureka client  [x]
+- 2.4 集群模式 [x]
 
 
